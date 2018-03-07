@@ -37,7 +37,7 @@ namespace CheeseMVC.Controllers
         }
 
         [HttpPost]
-        public IActionResult New(AddCategoryViewModel addCategoryViewModel)
+        public IActionResult Add(AddCategoryViewModel addCategoryViewModel)
         {
           
 
