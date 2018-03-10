@@ -61,13 +61,15 @@ namespace CheeseMVC.Controllers
                 .Where(cm => cm.MenuID == id)
                 .ToList();
 
+            //Menu menu = context.Menus.Single();
             Menu menu = context.Menus.Single(m => m.ID == id);
-
+            
             ViewMenuViewModel viewModel = new ViewMenuViewModel
             {
                 Menu = menu,
                 Items = items
             };
+
             return View(viewModel);
 
         }
@@ -103,7 +105,7 @@ namespace CheeseMVC.Controllers
                     context.SaveChanges();
                 }
 
-                return Redirect(string.Format("/Menu/ViewMenu/{0}", addMenuItemViewModel));
+                return Redirect(string.Format("/Menu/ViewMenu/{0}", addMenuItemViewModel.MenuID));
             }
             return View(addMenuItemViewModel);
         }

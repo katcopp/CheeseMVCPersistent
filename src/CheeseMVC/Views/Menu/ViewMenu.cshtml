@@ -6,6 +6,8 @@
     ViewBag.Title = Model.Menu.Name;
 }
 
+<h1>@ViewBag.Title</h1>
+
 <ul>
     @foreach (var cheeseMenu in Model.Items)
     {
@@ -15,7 +17,7 @@
 
 @if (Model.Items.Count == 0)
 {
-    <p><i>No menu items :O</i></p>
+    <p><i>No menu items</i></p>
 }
 
 <p><a asp-controller="Menu" asp-action="AddItem" asp-route-id="@Model.Menu.ID">Add Item</a></p>
